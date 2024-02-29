@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="main">
+            <h2>Graphic</h2>
+            <input id="filename" type="txt" value="file:///H:/.bmstu/DS/web-graph/Params.txt" size="50hv"></input>
+            <button onclick="newDir()">Find</button>
+            <hr>
+            <div class="graph-div">
+                <canvas id="graph-canvas" width="960" height="540" style="background: white"></canvas>
+            </div>   
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="main.js"></script>
+            <script src="chartWorker.js"></script>
+            <script>
+                const start = () => {
+                    getTextFromFile(dir);
+                    chartList = window.document.getElementsByTagName('ul')[0];
+                }
+                window.document.addEventListener('DOMContentLoaded', () =>{
+                    start();
+                });
+        </script>
+            <hr>
+            <div id="edit-bar">
+                <select id="xSelect">
+                </select>
+                <select id="ySelect">
+                </select>
+                <button onclick="newGraph()">Add</button>
+                <button onclick="clearGraph()">Clear</button>
+            </div>
+            <div>
+                <input id="saveFileName" type="text" value="Graphic"/>
+                <button onclick="saveGrpah()">Save</button>
+            </div>
+        </div>
+        <div class="settingsPanel">
+            <h2>Lines</h2>
+            <ul>
+            </ul>
+        </div>   
+        <div class="setLegend">
+            <h2>Legend</h2>
+            <p>Show <input id='showLegend' type='checkbox' onchange='changeShowLegend()' value='' /></p>
+            <p>Color <input id='colorLegend' type='color' onchange='changeLegendTextColor()'/></p>
+            <p>Font-size <input id='sizeLegend' type='number'  min="0" max="100" value="14" onchange='changeLegendTextSize()'/></p>
+            <h2>External</h2>
+            <p>LabelX <input class='external' id='labelX' type='text' value='' onchange="changeLabelX()" /></p>
+            <p>LabelY <input class='external' id='labelY' type='text' value='' onchange="changeLabelY()" /></p>
+
+       
+        </div> 
+    </body>
+</html>

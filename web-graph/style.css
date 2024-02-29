@@ -1,0 +1,72 @@
+body {
+    background: radial-gradient(circle, skyblue, steelblue);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+*::selection {
+    background: #d45959;
+    opacity: 0.5;
+}
+
+.main {
+    text-align: center;
+}
+
+.graph-canvas {
+    background: white;
+}
+
+.settingsPanel {
+    text-align: left;
+    padding: 10px;
+}
+
+.setLegend {
+    text-align: left;
+    padding: 10px;
+}
+
+input[type='color'] {
+    width: 40px;
+    height: 25px;
+    border: 0;
+    background: none;
+}
+
+input[type='range'] {
+    width: 40px;
+}
+
+input[type='number'] {
+    width: 40px;
+}
+
+input[class='external'] {
+    width: 60px;
+}
+
+option {
+    text-align: center;
+}
+
+li {
+    font-size: 16px;
+    background-color: rgba(255, 82, 220, 0.1);
+    padding: 0px 10px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.chartName {
+    padding-left: 0rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    width: 20em;
+    border: 10px ridge $f00;
+}
